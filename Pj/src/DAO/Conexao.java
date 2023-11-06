@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 
 public class Conexao {
-    private int g;
+    
     
     public Connection getConnection() throws SQLException{
         Connection conexao = DriverManager.getConnection(
