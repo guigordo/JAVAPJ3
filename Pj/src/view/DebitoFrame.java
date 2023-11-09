@@ -4,6 +4,10 @@
  */
 package view;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author unifgalbuquerque
@@ -16,6 +20,88 @@ public class DebitoFrame extends javax.swing.JFrame {
     public DebitoFrame() {
         initComponents();
     }
+
+    public JLabel getDébito() {
+        return Débito;
+    }
+
+    public void setDébito(JLabel Débito) {
+        this.Débito = Débito;
+    }
+
+    public JToggleButton getButtonconcluido() {
+        return buttonconcluido;
+    }
+
+    public void setButtonconcluido(JToggleButton buttonconcluido) {
+        this.buttonconcluido = buttonconcluido;
+    }
+
+    public JLabel getLbconta() {
+        return lbconta;
+    }
+
+    public void setLbconta(JLabel lbconta) {
+        this.lbconta = lbconta;
+    }
+
+    public JLabel getLbcpf() {
+        return lbcpf;
+    }
+
+    public void setLbcpf(JLabel lbcpf) {
+        this.lbcpf = lbcpf;
+    }
+
+    public JLabel getLbsenha() {
+        return lbsenha;
+    }
+
+    public void setLbsenha(JLabel lbsenha) {
+        this.lbsenha = lbsenha;
+    }
+
+    public JLabel getLbvalor() {
+        return lbvalor;
+    }
+
+    public void setLbvalor(JLabel lbvalor) {
+        this.lbvalor = lbvalor;
+    }
+
+    public JTextField getTxtconta() {
+        return txtconta;
+    }
+
+    public void setTxtconta(JTextField txtconta) {
+        this.txtconta = txtconta;
+    }
+
+    public JTextField getTxtcpf() {
+        return txtcpf;
+    }
+
+    public void setTxtcpf(JTextField txtcpf) {
+        this.txtcpf = txtcpf;
+    }
+
+    public JTextField getTxtsenha() {
+        return txtsenha;
+    }
+
+    public void setTxtsenha(JTextField txtsenha) {
+        this.txtsenha = txtsenha;
+    }
+
+    public JTextField getTxtvalor() {
+        return txtvalor;
+    }
+
+    public void setTxtvalor(JTextField txtvalor) {
+        this.txtvalor = txtvalor;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

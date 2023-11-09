@@ -4,6 +4,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author unifgalbuquerque
@@ -17,6 +21,54 @@ public class LoginFrame extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getButtonlogin() {
+        return buttonlogin;
+    }
+
+    public void setButtonlogin(JButton buttonlogin) {
+        this.buttonlogin = buttonlogin;
+    }
+
+    public JLabel getJbcpf() {
+        return jbcpf;
+    }
+
+    public void setJbcpf(JLabel jbcpf) {
+        this.jbcpf = jbcpf;
+    }
+
+    public JLabel getJbsenha() {
+        return jbsenha;
+    }
+
+    public void setJbsenha(JLabel jbsenha) {
+        this.jbsenha = jbsenha;
+    }
+
+    public JLabel getLblogin() {
+        return lblogin;
+    }
+
+    public void setLblogin(JLabel lblogin) {
+        this.lblogin = lblogin;
+    }
+
+    public JTextField getTxtcpf() {
+        return txtcpf;
+    }
+
+    public void setTxtcpf(JTextField txtcpf) {
+        this.txtcpf = txtcpf;
+    }
+
+    public JTextField getTxtsenha() {
+        return txtsenha;
+    }
+
+    public void setTxtsenha(JTextField txtsenha) {
+        this.txtsenha = txtsenha;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
