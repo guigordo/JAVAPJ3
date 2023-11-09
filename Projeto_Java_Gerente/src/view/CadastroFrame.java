@@ -4,6 +4,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author unifgalbuquerque
@@ -17,6 +21,86 @@ public class CadastroFrame extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getButtonconcluido() {
+        return buttonconcluido;
+    }
+
+    public void setButtonconcluido(JButton buttonconcluido) {
+        this.buttonconcluido = buttonconcluido;
+    }
+
+    public JLabel getLbcadastro() {
+        return lbcadastro;
+    }
+
+    public void setLbcadastro(JLabel lbcadastro) {
+        this.lbcadastro = lbcadastro;
+    }
+
+    public JLabel getLbcpf() {
+        return lbcpf;
+    }
+
+    public void setLbcpf(JLabel lbcpf) {
+        this.lbcpf = lbcpf;
+    }
+
+    public JLabel getLbnome() {
+        return lbnome;
+    }
+
+    public void setLbnome(JLabel lbnome) {
+        this.lbnome = lbnome;
+    }
+
+    public JLabel getLbsenha() {
+        return lbsenha;
+    }
+
+    public void setLbsenha(JLabel lbsenha) {
+        this.lbsenha = lbsenha;
+    }
+
+    public JLabel getLbvi() {
+        return lbvi;
+    }
+
+    public void setLbvi(JLabel lbvi) {
+        this.lbvi = lbvi;
+    }
+
+    public JTextField getTxtcpf() {
+        return txtcpf;
+    }
+
+    public void setTxtcpf(JTextField txtcpf) {
+        this.txtcpf = txtcpf;
+    }
+
+    public JTextField getTxtnome() {
+        return txtnome;
+    }
+
+    public void setTxtnome(JTextField txtnome) {
+        this.txtnome = txtnome;
+    }
+
+    public JTextField getTxtsenha() {
+        return txtsenha;
+    }
+
+    public void setTxtsenha(JTextField txtsenha) {
+        this.txtsenha = txtsenha;
+    }
+
+    public JTextField getTxtvi() {
+        return txtvi;
+    }
+
+    public void setTxtvi(JTextField txtvi) {
+        this.txtvi = txtvi;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
