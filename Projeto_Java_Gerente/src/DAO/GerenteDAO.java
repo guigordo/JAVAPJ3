@@ -28,7 +28,7 @@ public class GerenteDAO {
     }
     
     public void inserir(Gerente gerente) throws SQLException{
-        String sql = "insert into clientes (nome,cpf,senha,vi) values ('" +
+        String sql = "insert into clientes (nome,CPF,senha,VI) values ('" +
                 gerente.getNome() + "','" + gerente.getCPF() + "', '" +
                 gerente.getSenha() + "', '" + gerente.getVI() + "')";
         PreparedStatement statement = conn.prepareStatement(sql);
@@ -37,7 +37,7 @@ public class GerenteDAO {
     }
     
     public void atualizar(Gerente gerente) throws SQLException{
-        String sql = "update clientes set senha = ? where cpf = ?";
+        String sql = "update clientes set senha = ? where CPF = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, gerente.getCPF());
         statement.setString(2, gerente.getSenha());
@@ -47,13 +47,11 @@ public class GerenteDAO {
     }
     
     public void remover(Gerente gerente) throws SQLException{
-        String sql = "delete from clientes where cpf = ?";
+        String sql = "delete from clientes where CPF = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, gerente.getCPF());
         statement.execute();
         conn.close();
         
     }
-    
-    
 }
