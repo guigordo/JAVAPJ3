@@ -36,6 +36,11 @@ public class ContaDeletadaFrame extends javax.swing.JFrame {
 
         buttonok.setText("OK!");
         buttonok.setToolTipText("");
+        buttonok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonokActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,6 +68,11 @@ public class ContaDeletadaFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonokActionPerformed
+        // TODO add your handling code here:
+        new OutraOpFrame().setVisible(true);
+    }//GEN-LAST:event_buttonokActionPerformed
 
     /**
      * @param args the command line arguments

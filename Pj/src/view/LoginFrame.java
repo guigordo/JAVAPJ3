@@ -162,6 +162,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void buttonloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonloginActionPerformed
         // TODO add your handling code here:
+        new ClienteOpcFrame().setVisible(true);
         
     }//GEN-LAST:event_buttonloginActionPerformed
 

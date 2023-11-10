@@ -27,39 +27,54 @@ public class MenuFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btcadastrar = new javax.swing.JButton();
+        btexcluir = new javax.swing.JButton();
+        btcriarconta = new javax.swing.JButton();
+        btexibircontas = new javax.swing.JButton();
+        btexibirsaldo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Bem Vindo Gerente!");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setText("Cadastrar Conta");
-
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton2.setText("Excluir Conta");
-
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jButton3.setText("Criar Conta Salário,Corrente ou Poupança");
-
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton4.setText("Exibir Todas as Contas");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btcadastrar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btcadastrar.setText("Cadastrar Conta");
+        btcadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btcadastrarActionPerformed(evt);
             }
         });
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton5.setText("Exibir Saldo das Contas");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btexcluir.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btexcluir.setText("Excluir Conta");
+        btexcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btexcluirActionPerformed(evt);
+            }
+        });
+
+        btcriarconta.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
+        btcriarconta.setText("Criar Conta Salário,Corrente ou Poupança");
+        btcriarconta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btcriarcontaActionPerformed(evt);
+            }
+        });
+
+        btexibircontas.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btexibircontas.setText("Exibir Todas as Contas");
+        btexibircontas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btexibircontasActionPerformed(evt);
+            }
+        });
+
+        btexibirsaldo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btexibirsaldo.setText("Exibir Saldo das Contas");
+        btexibirsaldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btexibirsaldoActionPerformed(evt);
             }
         });
 
@@ -75,11 +90,11 @@ public class MenuFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btexcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btcadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btcriarconta, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btexibircontas, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btexibirsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -88,28 +103,45 @@ public class MenuFrame extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btcadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btexcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btcriarconta, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btexibircontas, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btexibirsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btexibircontasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btexibircontasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        new ContasBancoFrame().setVisible(true);
+    }//GEN-LAST:event_btexibircontasActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btexibirsaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btexibirsaldoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        new SaldoContasFrame().setVisible(true);
+    }//GEN-LAST:event_btexibirsaldoActionPerformed
+
+    private void btcadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrarActionPerformed
+        // TODO add your handling code here:
+        new CadastroFrame().setVisible(true);
+    }//GEN-LAST:event_btcadastrarActionPerformed
+
+    private void btexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btexcluirActionPerformed
+        // TODO add your handling code here:
+        new ExcluirContaFrame().setVisible(true);
+    }//GEN-LAST:event_btexcluirActionPerformed
+
+    private void btcriarcontaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcriarcontaActionPerformed
+        // TODO add your handling code here:
+        new TipoContaFrame().setVisible(true);
+    }//GEN-LAST:event_btcriarcontaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,11 +179,11 @@ public class MenuFrame extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btcadastrar;
+    private javax.swing.JButton btcriarconta;
+    private javax.swing.JButton btexcluir;
+    private javax.swing.JButton btexibircontas;
+    private javax.swing.JButton btexibirsaldo;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

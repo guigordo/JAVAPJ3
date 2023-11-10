@@ -71,6 +71,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="SIM"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonsimActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="buttonnao">
       <Properties>
@@ -79,6 +82,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="N&#xc3;O"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonnaoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

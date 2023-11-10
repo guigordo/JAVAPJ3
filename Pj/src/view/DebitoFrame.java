@@ -141,6 +141,11 @@ public class DebitoFrame extends javax.swing.JFrame {
         lbconta.setText("Conta:");
 
         buttonconcluido.setText("Concluído");
+        buttonconcluido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonconcluidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,6 +211,11 @@ public class DebitoFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonconcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonconcluidoActionPerformed
+        // TODO add your handling code here:
+        new OutraOpFrame().setVisible(true);
+    }//GEN-LAST:event_buttonconcluidoActionPerformed
 
     /**
      * @param args the command line arguments

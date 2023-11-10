@@ -91,6 +91,11 @@ public class SaldoContasFrame extends javax.swing.JFrame {
         });
 
         buttonconcluido.setText("Concluído");
+        buttonconcluido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonconcluidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -196,6 +201,11 @@ public class SaldoContasFrame extends javax.swing.JFrame {
     private void txtsaldo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsaldo3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtsaldo3ActionPerformed
+
+    private void buttonconcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonconcluidoActionPerformed
+        // TODO add your handling code here:
+        new OutraOpFrame().setVisible(true);
+    }//GEN-LAST:event_buttonconcluidoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -29,9 +29,9 @@ public class TipoContaFrame extends javax.swing.JFrame {
         lbctc = new javax.swing.JLabel();
         txtcpf = new javax.swing.JTextField();
         lbescolha = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        btcorrente = new javax.swing.JToggleButton();
+        btpoupanca = new javax.swing.JToggleButton();
+        btsalario = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,18 +41,28 @@ public class TipoContaFrame extends javax.swing.JFrame {
         lbescolha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbescolha.setText("Digite o CPF e escolha o tipo de conta");
 
-        jToggleButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jToggleButton1.setText("Corrente");
-
-        jToggleButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jToggleButton2.setText("Poupança");
-
-        jToggleButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jToggleButton3.setText("Salário");
-        jToggleButton3.setToolTipText("");
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+        btcorrente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btcorrente.setText("Corrente");
+        btcorrente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+                btcorrenteActionPerformed(evt);
+            }
+        });
+
+        btpoupanca.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btpoupanca.setText("Poupança");
+        btpoupanca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btpoupancaActionPerformed(evt);
+            }
+        });
+
+        btsalario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btsalario.setText("Salário");
+        btsalario.setToolTipText("");
+        btsalario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btsalarioActionPerformed(evt);
             }
         });
 
@@ -67,9 +77,9 @@ public class TipoContaFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(txtcpf)
                             .addComponent(lbctc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jToggleButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jToggleButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btcorrente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btpoupanca, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btsalario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(63, 63, 63))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lbescolha)
@@ -85,20 +95,31 @@ public class TipoContaFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btcorrente, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btpoupanca, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btsalario, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void btsalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsalarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+        new ContaCadastradaFrame().setVisible(true);
+    }//GEN-LAST:event_btsalarioActionPerformed
+
+    private void btcorrenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcorrenteActionPerformed
+        // TODO add your handling code here:
+        new ContaCadastradaFrame().setVisible(true);
+    }//GEN-LAST:event_btcorrenteActionPerformed
+
+    private void btpoupancaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btpoupancaActionPerformed
+        // TODO add your handling code here:
+        new ContaCadastradaFrame().setVisible(true);
+    }//GEN-LAST:event_btpoupancaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,9 +157,9 @@ public class TipoContaFrame extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton btcorrente;
+    private javax.swing.JToggleButton btpoupanca;
+    private javax.swing.JToggleButton btsalario;
     private javax.swing.JLabel lbctc;
     private javax.swing.JLabel lbescolha;
     private javax.swing.JTextField txtcpf;

@@ -27,10 +27,8 @@
               <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="buttonconcluido" pref="193" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="lbsaldo" pref="193" max="32767" attributes="0"/>
-                      <Component id="txtsaldo" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="lbsaldo" pref="193" max="32767" attributes="0"/>
+                  <Component id="txtsaldo" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="108" max="32767" attributes="0"/>
           </Group>
@@ -65,6 +63,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Conclu&#xed;do"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonconcluidoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

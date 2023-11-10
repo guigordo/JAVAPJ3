@@ -32,11 +32,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton2" min="-2" pref="284" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="284" max="-2" attributes="0"/>
-                          <Component id="jButton3" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
-                          <Component id="jButton4" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
+                          <Component id="btexcluir" min="-2" pref="284" max="-2" attributes="0"/>
+                          <Component id="btcadastrar" min="-2" pref="284" max="-2" attributes="0"/>
+                          <Component id="btcriarconta" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
+                          <Component id="btexibircontas" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
+                          <Component id="btexibirsaldo" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -50,15 +50,15 @@
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="79" max="-2" attributes="0"/>
+              <Component id="btcadastrar" min="-2" pref="79" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="79" max="-2" attributes="0"/>
+              <Component id="btexcluir" min="-2" pref="79" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton3" min="-2" pref="79" max="-2" attributes="0"/>
+              <Component id="btcriarconta" min="-2" pref="79" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton4" min="-2" pref="79" max="-2" attributes="0"/>
+              <Component id="btexibircontas" min="-2" pref="79" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton5" min="-2" pref="79" max="-2" attributes="0"/>
+              <Component id="btexibirsaldo" min="-2" pref="79" max="-2" attributes="0"/>
               <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -73,31 +73,40 @@
         <Property name="text" type="java.lang.String" value="Bem Vindo Gerente!"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btcadastrar">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cadastrar Conta"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btcadastrarActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btexcluir">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Excluir Conta"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btexcluirActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btcriarconta">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="13" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Criar Conta Sal&#xe1;rio,Corrente ou Poupan&#xe7;a"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btcriarcontaActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="btexibircontas">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="0"/>
@@ -105,10 +114,10 @@
         <Property name="text" type="java.lang.String" value="Exibir Todas as Contas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btexibircontasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="btexibirsaldo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="0"/>
@@ -116,7 +125,7 @@
         <Property name="text" type="java.lang.String" value="Exibir Saldo das Contas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btexibirsaldoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

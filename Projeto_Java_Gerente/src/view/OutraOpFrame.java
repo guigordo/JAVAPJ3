@@ -37,9 +37,19 @@ public class OutraOpFrame extends javax.swing.JFrame {
 
         buttonsim.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         buttonsim.setText("SIM");
+        buttonsim.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonsimActionPerformed(evt);
+            }
+        });
 
         buttonnao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         buttonnao.setText("NÃO");
+        buttonnao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonnaoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,6 +81,16 @@ public class OutraOpFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonnaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonnaoActionPerformed
+        // TODO add your handling code here:
+        new OpNaoFrame().setVisible(true);
+    }//GEN-LAST:event_buttonnaoActionPerformed
+
+    private void buttonsimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonsimActionPerformed
+        // TODO add your handling code here:
+        new MenuFrame().setVisible(true);
+    }//GEN-LAST:event_buttonsimActionPerformed
 
     /**
      * @param args the command line arguments
