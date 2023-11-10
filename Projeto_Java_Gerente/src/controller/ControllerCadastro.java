@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
         this.view = view;
     }
     
-    public void salvarAluno(){
+    public void salvarCliente(){
         String nome = view.getTxtnome().getText();
         String CPF = view.getTxtcpf().getText();
         String senha = view.getTxtsenha().getText();

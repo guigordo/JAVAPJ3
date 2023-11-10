@@ -39,15 +39,35 @@ public class ClienteOpcFrame extends javax.swing.JFrame {
 
         buttondeposito.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         buttondeposito.setText("Depósito");
+        buttondeposito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttondepositoActionPerformed(evt);
+            }
+        });
 
         buttondebito.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         buttondebito.setText("Débito");
+        buttondebito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttondebitoActionPerformed(evt);
+            }
+        });
 
         buttonsaldo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         buttonsaldo.setText("Exibir Saldo");
+        buttonsaldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonsaldoActionPerformed(evt);
+            }
+        });
 
         buttonextrato.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         buttonextrato.setText("Exibir Extrato");
+        buttonextrato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonextratoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,6 +105,26 @@ public class ClienteOpcFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttondebitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttondebitoActionPerformed
+        // TODO add your handling code here:
+        new DebitoFrame().setVisible(true);
+    }//GEN-LAST:event_buttondebitoActionPerformed
+
+    private void buttondepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttondepositoActionPerformed
+        // TODO add your handling code here:
+        new DepositoFrame().setVisible(true);
+    }//GEN-LAST:event_buttondepositoActionPerformed
+
+    private void buttonsaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonsaldoActionPerformed
+        // TODO add your handling code here:
+        new SaldoContaFrame().setVisible(true);
+    }//GEN-LAST:event_buttonsaldoActionPerformed
+
+    private void buttonextratoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonextratoActionPerformed
+        // TODO add your handling code here:
+        new ExtratoFrame().setVisible(true);
+    }//GEN-LAST:event_buttonextratoActionPerformed
 
     /**
      * @param args the command line arguments

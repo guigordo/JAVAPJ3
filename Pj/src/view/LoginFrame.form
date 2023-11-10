@@ -41,7 +41,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jbcpf" min="-2" pref="52" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txtcpf" min="-2" pref="227" max="-2" attributes="0"/>
+                              <Component id="Txtcpf" min="-2" pref="227" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -62,7 +62,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jbcpf" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtcpf" alignment="3" max="32767" attributes="0"/>
+                  <Component id="Txtcpf" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -101,9 +101,9 @@
         <Property name="text" type="java.lang.String" value="Senha: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtcpf">
+    <Component class="javax.swing.JTextField" name="Txtcpf">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtcpfActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TxtcpfActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtsenha">

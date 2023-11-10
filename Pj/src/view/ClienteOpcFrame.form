@@ -77,6 +77,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Dep&#xf3;sito"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttondepositoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttondebito">
       <Properties>
@@ -85,6 +88,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="D&#xe9;bito"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttondebitoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonsaldo">
       <Properties>
@@ -93,6 +99,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Exibir Saldo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonsaldoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonextrato">
       <Properties>
@@ -101,6 +110,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Exibir Extrato"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonextratoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

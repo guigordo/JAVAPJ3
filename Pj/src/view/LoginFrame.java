@@ -54,11 +54,11 @@ public class LoginFrame extends javax.swing.JFrame {
     }
 
     public JTextField getTxtcpf() {
-        return txtcpf;
+        return Txtcpf;
     }
 
     public void setTxtcpf(JTextField txtcpf) {
-        this.txtcpf = txtcpf;
+        this.Txtcpf = txtcpf;
     }
 
     public JTextField getTxtsenha() {
@@ -81,7 +81,7 @@ public class LoginFrame extends javax.swing.JFrame {
         lblogin = new javax.swing.JLabel();
         jbcpf = new javax.swing.JLabel();
         jbsenha = new javax.swing.JLabel();
-        txtcpf = new javax.swing.JTextField();
+        Txtcpf = new javax.swing.JTextField();
         txtsenha = new javax.swing.JTextField();
         buttonlogin = new javax.swing.JButton();
 
@@ -96,9 +96,9 @@ public class LoginFrame extends javax.swing.JFrame {
         jbsenha.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jbsenha.setText("Senha: ");
 
-        txtcpf.addActionListener(new java.awt.event.ActionListener() {
+        Txtcpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcpfActionPerformed(evt);
+                TxtcpfActionPerformed(evt);
             }
         });
 
@@ -129,7 +129,7 @@ public class LoginFrame extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jbcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(Txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(131, 131, 131)
                         .addComponent(buttonlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -143,7 +143,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbcpf)
-                    .addComponent(txtcpf))
+                    .addComponent(Txtcpf))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbsenha)
@@ -156,12 +156,13 @@ public class LoginFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtcpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcpfActionPerformed
+    private void TxtcpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtcpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtcpfActionPerformed
+    }//GEN-LAST:event_TxtcpfActionPerformed
 
     private void buttonloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonloginActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_buttonloginActionPerformed
 
     /**
@@ -200,11 +201,11 @@ public class LoginFrame extends javax.swing.JFrame {
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Txtcpf;
     private javax.swing.JButton buttonlogin;
     private javax.swing.JLabel jbcpf;
     private javax.swing.JLabel jbsenha;
     private javax.swing.JLabel lblogin;
-    private javax.swing.JTextField txtcpf;
     private javax.swing.JTextField txtsenha;
     // End of variables declaration//GEN-END:variables
 }

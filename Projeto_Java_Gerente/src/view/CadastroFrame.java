@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.ControllerCadastro;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -19,6 +20,7 @@ public class CadastroFrame extends javax.swing.JFrame {
      */
     public CadastroFrame() {
         initComponents();
+        controller = new ControllerCadastro(this);
     }
 
     public JButton getButtonconcluido() {
@@ -147,6 +149,11 @@ public class CadastroFrame extends javax.swing.JFrame {
         lbvi.setText("Digite o valor inicial do cliente:");
 
         buttonconcluido.setText("Concluído");
+        buttonconcluido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonconcluidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -210,6 +217,13 @@ public class CadastroFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonconcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonconcluidoActionPerformed
+        // TODO add your handling code here:
+        
+        controller.salvarCliente();
+        new ContaCadastradaFrame().setVisible(true);
+    }//GEN-LAST:event_buttonconcluidoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -244,7 +258,7 @@ public class CadastroFrame extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+    private ControllerCadastro controller;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonconcluido;
     private javax.swing.JLabel lbcadastro;
