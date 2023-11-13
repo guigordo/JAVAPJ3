@@ -2,7 +2,7 @@
 package pjgerente;
 
 
-import view.CadastroFrame;
+
 import view.MenuFrame;
 
 
