@@ -23,7 +23,7 @@ import javax.swing.JOptionPane;
         String nome = view.getTxtnome().getText();
         String CPF = view.getTxtcpf().getText();
         String senha = view.getTxtsenha().getText();
-        String VI = view.getTxtvi().getText();
+        String VI = view.getTxtsaldo().getText();
         Gerente gerente = new Gerente(CPF,nome,senha,VI);
         Conexao conexao = new Conexao();
         try{

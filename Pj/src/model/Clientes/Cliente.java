@@ -9,11 +9,13 @@ package model.Clientes;
  * @author Administrador
  */
 public class Cliente {
-    private String cpf,senha;
+    private String cpf,senha,tdc,saldo;
 
-    public Cliente(String cpf, String senha) {
+    public Cliente(String cpf, String senha,String tdc,String saldo) {
         this.cpf = cpf;
         this.senha = senha;
+        this.tdc = tdc;
+        this.saldo = saldo;
     }
     
     public String getCpf() {
@@ -32,10 +34,29 @@ public class Cliente {
         this.senha = senha;
     }
 
+    public String getTdc() {
+        return tdc;
+    }
+
+    public void setTdc(String tdc) {
+        this.tdc = tdc;
+    }
+
+    public String getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(String saldo) {
+        this.saldo = saldo;
+    }
+
     @Override
     public String toString() {
-        return "Cliente{" + "cpf=" + cpf + ", senha=" + senha + '}';
+        return "Cliente{" + "cpf=" + cpf + ", senha=" + senha + ", tdc=" + tdc + ", saldo=" + saldo + '}';
     }
+    
+    
+    
     
     
     

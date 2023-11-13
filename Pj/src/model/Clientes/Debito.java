@@ -1,32 +1,30 @@
+
 package model.Clientes;
 
 public class Debito {
-    private String CPF,TDC,senha,valor;
+    private String cpf,tdc,senha,valor;
 
-    public Debito() {
-    }
-
-    public Debito(String CPF, String TDC, String senha, String valor) {
-        this.CPF = CPF;
-        this.TDC = TDC;
+    public Debito(String cpf, String tdc, String senha, String valor) {
+        this.cpf = cpf;
+        this.tdc = tdc;
         this.senha = senha;
         this.valor = valor;
     }
 
-    public String getCPF() {
-        return CPF;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public String getTDC() {
-        return TDC;
+    public String getTdc() {
+        return tdc;
     }
 
-    public void setTDC(String TDC) {
-        this.TDC = TDC;
+    public void setTdc(String tdc) {
+        this.tdc = tdc;
     }
 
     public String getSenha() {
@@ -47,8 +45,9 @@ public class Debito {
 
     @Override
     public String toString() {
-        return "Debito{" + "CPF=" + CPF + ", TDC=" + TDC + ", senha=" + senha + ", valor=" + valor + '}';
+        return "Debito{" + "cpf=" + cpf + ", tdc=" + tdc + ", senha=" + senha + ", valor=" + valor + '}';
     }
+    
     
     
 }

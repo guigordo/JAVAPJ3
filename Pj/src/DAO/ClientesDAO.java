@@ -4,6 +4,7 @@ import java.sql.PreparedStatement;
 import model.Clientes.Cliente;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import model.Clientes.Debito;
 
 
 public class ClientesDAO{
@@ -23,5 +24,15 @@ public class ClientesDAO{
         return resultado;
     }
     
+    public ResultSet atualizarSaldo(Debito debito) throws SQLException {
+        String sql = "UPDATE clientes SET saldo = ? WHERE cpf = ?";
+        try (PreparedStatement statement = conn.prepareStatement(sql)) {
+            double novoSaldo = Double.parseDouble(debito.getValor());
+            
+            statement.setDouble(1, novoSaldo);
+            statement.setString(2, debito.getCpf());
+            statement.executeUpdate();
+        }
+    }
     
 }

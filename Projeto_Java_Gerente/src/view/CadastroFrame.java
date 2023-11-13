@@ -95,12 +95,12 @@ public class CadastroFrame extends javax.swing.JFrame {
         this.txtsenha = txtsenha;
     }
 
-    public JTextField getTxtvi() {
-        return txtvi;
+    public JTextField getTxtsaldo() {
+        return txtsaldo;
     }
 
-    public void setTxtvi(JTextField txtvi) {
-        this.txtvi = txtvi;
+    public void setTxtsaldo(JTextField txtvi) {
+        this.txtsaldo = txtvi;
     }
     
     /**
@@ -119,7 +119,7 @@ public class CadastroFrame extends javax.swing.JFrame {
         txtcpf = new javax.swing.JTextField();
         lbsenha = new javax.swing.JLabel();
         txtsenha = new javax.swing.JTextField();
-        txtvi = new javax.swing.JTextField();
+        txtsaldo = new javax.swing.JTextField();
         lbvi = new javax.swing.JLabel();
         buttonconcluido = new javax.swing.JButton();
 
@@ -143,7 +143,7 @@ public class CadastroFrame extends javax.swing.JFrame {
 
         txtsenha.setToolTipText("");
 
-        txtvi.setToolTipText("");
+        txtsaldo.setToolTipText("");
 
         lbvi.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbvi.setText("Digite o valor inicial do cliente:");
@@ -182,7 +182,7 @@ public class CadastroFrame extends javax.swing.JFrame {
                             .addGap(19, 19, 19)
                             .addComponent(lbvi)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtvi)))
+                            .addComponent(txtsaldo)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(83, 83, 83)
                         .addComponent(buttonconcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -208,7 +208,7 @@ public class CadastroFrame extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbvi)
-                    .addComponent(txtvi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(buttonconcluido, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
                 .addContainerGap())
@@ -268,7 +268,7 @@ public class CadastroFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lbvi;
     private javax.swing.JTextField txtcpf;
     private javax.swing.JTextField txtnome;
+    private javax.swing.JTextField txtsaldo;
     private javax.swing.JTextField txtsenha;
-    private javax.swing.JTextField txtvi;
     // End of variables declaration//GEN-END:variables
 }

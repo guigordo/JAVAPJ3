@@ -52,7 +52,7 @@
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Component id="lbvi" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtvi" max="32767" attributes="0"/>
+                          <Component id="txtsaldo" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -87,7 +87,7 @@
               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lbvi" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtvi" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtsaldo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="buttonconcluido" pref="58" max="32767" attributes="0"/>
@@ -144,7 +144,7 @@
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtvi">
+    <Component class="javax.swing.JTextField" name="txtsaldo">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
