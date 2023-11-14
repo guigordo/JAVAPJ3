@@ -16,7 +16,7 @@ public class ClientesDAO{
     }
     
     public ResultSet consultar(Cliente cliente) throws SQLException{
-        String sql = "select * from Clientes where = ? and senha = ?";
+        String sql = "select * from cliente where = ? and senha = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(0, cliente.getCpf());
         statement.setString(1, cliente.getSenha());
@@ -26,7 +26,7 @@ public class ClientesDAO{
     }
     
     public void atualizarSaldo(Debito debito) throws SQLException {
-        String sql = "UPDATE Clientes SET saldo = ? WHERE cpf = ?";
+        String sql = "update cliente SET saldo = ? where cpf = ?";
         try (PreparedStatement statement = conn.prepareStatement(sql)) {
             double novoSaldo = Double.parseDouble(debito.getValor());
             
@@ -38,7 +38,7 @@ public class ClientesDAO{
     }
     
     public void atualizarSaldoDeposito(Deposito deposito) throws SQLException{
-        String sql = "UPDATE Clientes SET saldo = ? WHERE cpf = ?";
+        String sql = "update cliente SET saldo = ? where cpf = ?";
         try (PreparedStatement statement = conn.prepareStatement(sql)) {
 
         statement.setString(1, deposito.getvalor());
@@ -47,7 +47,7 @@ public class ClientesDAO{
         }
     }
     public ResultSet consultarSaldo(Cliente cliente) {
-        String sql = "SELECT saldo FROM clientes WHERE cpf = ?";
+        String sql = "SELECT saldo FROM cliente WHERE cpf = ?";
 
         try (PreparedStatement statement = conn.prepareStatement(sql)) {
             statement.setString(1, cliente.getCpf());

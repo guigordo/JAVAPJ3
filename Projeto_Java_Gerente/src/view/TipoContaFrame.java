@@ -4,6 +4,11 @@
  */
 package view;
 
+import controller.ControllerTdc;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author unifgalbuquerque
@@ -15,7 +20,58 @@ public class TipoContaFrame extends javax.swing.JFrame {
      */
     public TipoContaFrame() {
         initComponents();
+        controller = new ControllerTdc(this);
     }
+
+    public JToggleButton getBtcorrente() {
+        return btcorrente;
+    }
+
+    public void setBtcorrente(JToggleButton btcorrente) {
+        this.btcorrente = btcorrente;
+    }
+
+    public JToggleButton getBtpoupanca() {
+        return btpoupanca;
+    }
+
+    public void setBtpoupanca(JToggleButton btpoupanca) {
+        this.btpoupanca = btpoupanca;
+    }
+
+    public JToggleButton getBtsalario() {
+        return btsalario;
+    }
+
+    public void setBtsalario(JToggleButton btsalario) {
+        this.btsalario = btsalario;
+    }
+
+    public JLabel getLbctc() {
+        return lbctc;
+    }
+
+    public void setLbctc(JLabel lbctc) {
+        this.lbctc = lbctc;
+    }
+
+    public JLabel getLbescolha() {
+        return lbescolha;
+    }
+
+    public void setLbescolha(JLabel lbescolha) {
+        this.lbescolha = lbescolha;
+    }
+
+    public JTextField getTxtcpf() {
+        return txtcpf;
+    }
+
+    public void setTxtcpf(JTextField txtcpf) {
+        this.txtcpf = txtcpf;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,6 +93,12 @@ public class TipoContaFrame extends javax.swing.JFrame {
 
         lbctc.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lbctc.setText("Criar Tipo de Conta");
+
+        txtcpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcpfActionPerformed(evt);
+            }
+        });
 
         lbescolha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbescolha.setText("Digite o CPF e escolha o tipo de conta");
@@ -108,18 +170,25 @@ public class TipoContaFrame extends javax.swing.JFrame {
 
     private void btsalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsalarioActionPerformed
         // TODO add your handling code here:
+        controller.escolherConta();
         new ContaCadastradaFrame().setVisible(true);
     }//GEN-LAST:event_btsalarioActionPerformed
 
     private void btcorrenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcorrenteActionPerformed
         // TODO add your handling code here:
+        controller.escolherConta();
         new ContaCadastradaFrame().setVisible(true);
     }//GEN-LAST:event_btcorrenteActionPerformed
 
     private void btpoupancaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btpoupancaActionPerformed
         // TODO add your handling code here:
+        controller.escolherConta();
         new ContaCadastradaFrame().setVisible(true);
     }//GEN-LAST:event_btpoupancaActionPerformed
+
+    private void txtcpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcpfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,7 +224,7 @@ public class TipoContaFrame extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+    private ControllerTdc controller;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btcorrente;
     private javax.swing.JToggleButton btpoupanca;

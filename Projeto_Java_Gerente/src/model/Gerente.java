@@ -3,16 +3,25 @@ package model;
 
 
 public class Gerente {
-    private String CPF,nome,senha,saldo;
+    private String CPF,nome,senha,saldo,tdc;
 
     public Gerente() {
     }
 
-    public Gerente(String CPF, String nome, String senha, String saldo) {
+    public Gerente(String CPF, String nome, String senha, String saldo,String tdc) {
         this.CPF = CPF;
         this.nome = nome;
         this.senha = senha;
         this.saldo = saldo;
+        this.tdc = tdc;
+    }
+
+    public String getTdc() {
+        return tdc;
+    }
+
+    public void setTdc(String tdc) {
+        this.tdc = tdc;
     }
     
     
@@ -42,11 +51,11 @@ public class Gerente {
         this.senha = senha;
     }
 
-    public String getsaldo() {
+    public String getSaldo() {
         return saldo;
     }
 
-    public void setsaldo(String saldo) {
+    public void setSaldo(String saldo) {
         this.saldo = saldo;
     }
 

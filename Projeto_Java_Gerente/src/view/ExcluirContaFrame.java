@@ -4,6 +4,11 @@
  */
 package view;
 
+import controller.ControllerDelete;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Administrador
@@ -15,7 +20,41 @@ public class ExcluirContaFrame extends javax.swing.JFrame {
      */
     public ExcluirContaFrame() {
         initComponents();
+        controller = new ControllerDelete(this);
     }
+
+    public JButton getButtonconcluido() {
+        return buttonconcluido;
+    }
+
+    public void setButtonconcluido(JButton buttonconcluido) {
+        this.buttonconcluido = buttonconcluido;
+    }
+
+    public JLabel getLbcpf() {
+        return lbcpf;
+    }
+
+    public void setLbcpf(JLabel lbcpf) {
+        this.lbcpf = lbcpf;
+    }
+
+    public JLabel getLbdelete() {
+        return lbdelete;
+    }
+
+    public void setLbdelete(JLabel lbdelete) {
+        this.lbdelete = lbdelete;
+    }
+
+    public JTextField getTxtcpf() {
+        return txtcpf;
+    }
+
+    public void setTxtcpf(JTextField txtcpf) {
+        this.txtcpf = txtcpf;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,6 +77,12 @@ public class ExcluirContaFrame extends javax.swing.JFrame {
 
         lbcpf.setFont(new java.awt.Font("Lucida Bright", 0, 24)); // NOI18N
         lbcpf.setText("Digite o CPF:");
+
+        txtcpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcpfActionPerformed(evt);
+            }
+        });
 
         buttonconcluido.setText("Concluído");
         buttonconcluido.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +133,13 @@ public class ExcluirContaFrame extends javax.swing.JFrame {
     private void buttonconcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonconcluidoActionPerformed
         // TODO add your handling code here:
         new ContaDeletadaFrame().setVisible(true);
+        controller.excluirCliente();    
     }//GEN-LAST:event_buttonconcluidoActionPerformed
+
+    private void txtcpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcpfActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_txtcpfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,7 +175,7 @@ public class ExcluirContaFrame extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+    private ControllerDelete controller;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonconcluido;
     private javax.swing.JLabel lbcpf;
