@@ -31,7 +31,7 @@ public class ControllerLogin {
                 JOptionPane.showMessageDialog(view, "Login Feito", "Aviso", JOptionPane.INFORMATION_MESSAGE);
                 String cpf = res.getString("cpf");
                 String senha = res.getString("senha");
-                ClienteOpcFrame viewcpc = new ClienteOpcFrame(new Cliente(cpf,senha,null,null)); 
+//                ClienteOpcFrame viewcpc = new ClienteOpcFrame(new Cliente(cpf,senha,null,null)); 
                  
             }else{
                 JOptionPane.showMessageDialog(view, "Login não efetuado", "Erro", JOptionPane.ERROR_MESSAGE);

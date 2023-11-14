@@ -3,16 +3,16 @@ package model;
 
 
 public class Gerente {
-    private String CPF,nome,senha,VI;
+    private String CPF,nome,senha,saldo;
 
     public Gerente() {
     }
 
-    public Gerente(String CPF, String nome, String senha, String VI) {
+    public Gerente(String CPF, String nome, String senha, String saldo) {
         this.CPF = CPF;
         this.nome = nome;
         this.senha = senha;
-        this.VI = VI;
+        this.saldo = saldo;
     }
     
     
@@ -42,17 +42,17 @@ public class Gerente {
         this.senha = senha;
     }
 
-    public String getVI() {
-        return VI;
+    public String getsaldo() {
+        return saldo;
     }
 
-    public void setVI(String VI) {
-        this.VI = VI;
+    public void setsaldo(String saldo) {
+        this.saldo = saldo;
     }
 
     @Override
     public String toString() {
-        return "Gerente{" + "CPF=" + CPF + ", nome=" + nome + ", senha=" + senha + ", VI=" + VI + '}';
+        return "Gerente{" + "CPF=" + CPF + ", nome=" + nome + ", senha=" + senha + ", saldo=" + saldo + '}';
     }
     
     

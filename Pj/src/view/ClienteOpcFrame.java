@@ -4,6 +4,8 @@
  */
 package view;
 
+import model.Clientes.Cliente;
+
 /**
  *
  * @author unifgalbuquerque
@@ -15,6 +17,10 @@ public class ClienteOpcFrame extends javax.swing.JFrame {
      */
     public ClienteOpcFrame() {
         initComponents();
+    }
+
+    public ClienteOpcFrame(Cliente cliente) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**

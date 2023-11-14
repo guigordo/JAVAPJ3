@@ -4,6 +4,10 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author unifgalbuquerque
@@ -16,6 +20,56 @@ public class DepositoFrame extends javax.swing.JFrame {
     public DepositoFrame() {
         initComponents();
     }
+
+    public JButton getButtonconcluido() {
+        return buttonconcluido;
+    }
+
+    public void setButtonconcluido(JButton buttonconcluido) {
+        this.buttonconcluido = buttonconcluido;
+    }
+
+    public JLabel getLbcpf() {
+        return lbcpf;
+    }
+
+    public void setLbcpf(JLabel lbcpf) {
+        this.lbcpf = lbcpf;
+    }
+
+    public JLabel getLbdeposito() {
+        return lbdeposito;
+    }
+
+    public void setLbdeposito(JLabel lbdeposito) {
+        this.lbdeposito = lbdeposito;
+    }
+
+    public JLabel getLbvalor() {
+        return lbvalor;
+    }
+
+    public void setLbvalor(JLabel lbvalor) {
+        this.lbvalor = lbvalor;
+    }
+
+    public JTextField getTxtcpf() {
+        return txtcpf;
+    }
+
+    public void setTxtcpf(JTextField txtcpf) {
+        this.txtcpf = txtcpf;
+    }
+
+    public JTextField getTxtvalor() {
+        return txtvalor;
+    }
+
+    public void setTxtvalor(JTextField txtvalor) {
+        this.txtvalor = txtvalor;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,6 +97,12 @@ public class DepositoFrame extends javax.swing.JFrame {
 
         lbvalor.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lbvalor.setText("Valor:");
+
+        txtcpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcpfActionPerformed(evt);
+            }
+        });
 
         buttonconcluido.setText("Concluído");
         buttonconcluido.addActionListener(new java.awt.event.ActionListener() {
@@ -104,6 +164,10 @@ public class DepositoFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         new OutraOpFrame().setVisible(true);
     }//GEN-LAST:event_buttonconcluidoActionPerformed
+
+    private void txtcpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcpfActionPerformed
 
     /**
      * @param args the command line arguments
