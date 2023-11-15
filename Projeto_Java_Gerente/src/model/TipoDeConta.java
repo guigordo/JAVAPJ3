@@ -3,10 +3,12 @@ package model;
 
 
 public class TipoDeConta {
-    String cpf;
+    private String cpf;
+   
 
     public TipoDeConta(String cpf) {
         this.cpf = cpf;
+        
     }
     
     public String getCpf() {

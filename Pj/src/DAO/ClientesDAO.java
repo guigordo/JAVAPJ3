@@ -26,7 +26,7 @@ public class ClientesDAO{
     }
     
     public void atualizarSaldo(Debito debito) throws SQLException {
-        String sql = "update cliente SET saldo = ? where cpf = ?";
+        String sql = "update cliente set saldo = ? where cpf = ?";
         try (PreparedStatement statement = conn.prepareStatement(sql)) {
             double novoSaldo = Double.parseDouble(debito.getValor());
             
@@ -38,7 +38,7 @@ public class ClientesDAO{
     }
     
     public void atualizarSaldoDeposito(Deposito deposito) throws SQLException{
-        String sql = "update cliente SET saldo = ? where cpf = ?";
+        String sql = "update cliente set saldo = ? where cpf = ?";
         try (PreparedStatement statement = conn.prepareStatement(sql)) {
 
         statement.setString(1, deposito.getvalor());

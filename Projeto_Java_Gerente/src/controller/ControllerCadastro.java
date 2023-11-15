@@ -25,6 +25,7 @@ import javax.swing.JOptionPane;
         String senha = view.getTxtsenha().getText();
         String VI = view.getTxtsaldo().getText();
         
+        
         Gerente gerente = new Gerente(CPF,nome,senha,VI,null);
         Conexao conexao = new Conexao();
         try{

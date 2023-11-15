@@ -25,8 +25,6 @@ public class Gerente {
     }
     
     
-    
-    
     public String getCPF() {
         return CPF;
     }
@@ -63,7 +61,5 @@ public class Gerente {
     public String toString() {
         return "Gerente{" + "CPF=" + CPF + ", nome=" + nome + ", senha=" + senha + ", saldo=" + saldo + '}';
     }
-    
-    
-    
+       
 }

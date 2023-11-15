@@ -22,6 +22,7 @@ public class CadastroFrame extends javax.swing.JFrame {
         initComponents();
         controller = new ControllerCadastro(this);
     }
+    
 
     public JButton getButtonconcluido() {
         return buttonconcluido;

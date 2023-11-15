@@ -3,13 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/view/MenuFrame.java</file>
-            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/DAO/Conexao.java</file>
-            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/view/CadastroFrame.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/view/OpNaoFrame.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/view/SaldoContasFrame.java</file>
             <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/controller/ControllerCadastro.java</file>
-            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/model/Gerente.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/view/CadastroFrame.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/controller/ControllerTdc.java</file>
             <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/pjgerente/PJGerente.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/model/TipoDeConta.java</file>
             <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/DAO/GerenteDAO.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/view/TipoContaFrame.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/model/Delete.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/view/ExcluirContaFrame.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/view/MenuFrame.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/view/OutraOpFrame.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/model/Gerente.java</file>
+            <file>file:/C:/NetBeansProjects/Java_PJ/JavaPJ/JAVAPJ/Projeto_Java_Gerente/src/controller/ControllerDelete.java</file>
         </group>
     </open-files>
 </project-private>

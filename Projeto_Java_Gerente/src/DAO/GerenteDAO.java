@@ -1,7 +1,6 @@
 package DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.Delete;
 import model.Gerente;
@@ -36,13 +35,30 @@ public class GerenteDAO {
         conn.close();
     }
     
-    public void contas(TipoDeConta tipodc) throws SQLException{
-        String sql = "update cliente set tdc = ? where cpf = ?";
+    public void contaSalario(TipoDeConta tipodc) throws SQLException{
+        String sql = "UPDATE cliente set tdc = 'salario' where cpf = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, tipodc.getCpf());
         statement.execute();
         conn.close();
     }
+    public void contaPoupanca(TipoDeConta tipodc) throws SQLException{
+        String sql = "UPDATE cliente set tdc = 'poupança' where cpf = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, tipodc.getCpf());
+        statement.execute();
+        conn.close();
+    
+    }
+    public void contaCorrente(TipoDeConta tipodc) throws SQLException{
+        String sql = "UPDATE cliente set tdc = 'corrente' where cpf = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, tipodc.getCpf());
+        statement.execute();
+        conn.close();
+    }
+}
+
     
 //    public ResultSet consultar(Gerente gerente) throws SQLException{
 //        String sql = "select * from cliente where = ? and senha = ? ";
@@ -83,4 +99,4 @@ public class GerenteDAO {
 //        conn.close();
 //        
 //    }
-}
+

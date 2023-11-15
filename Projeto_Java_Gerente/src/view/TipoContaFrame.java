@@ -170,20 +170,17 @@ public class TipoContaFrame extends javax.swing.JFrame {
 
     private void btsalarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsalarioActionPerformed
         // TODO add your handling code here:
-        controller.escolherConta();
-        new ContaCadastradaFrame().setVisible(true);
+        controller.escolherContaSalario();
     }//GEN-LAST:event_btsalarioActionPerformed
 
     private void btcorrenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcorrenteActionPerformed
         // TODO add your handling code here:
-        controller.escolherConta();
-        new ContaCadastradaFrame().setVisible(true);
+        controller.escolherContaCorrente();
     }//GEN-LAST:event_btcorrenteActionPerformed
 
     private void btpoupancaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btpoupancaActionPerformed
         // TODO add your handling code here:
-        controller.escolherConta();
-        new ContaCadastradaFrame().setVisible(true);
+        controller.escolherContaPoupanca();
     }//GEN-LAST:event_btpoupancaActionPerformed
 
     private void txtcpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcpfActionPerformed
