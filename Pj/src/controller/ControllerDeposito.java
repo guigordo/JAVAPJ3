@@ -23,7 +23,7 @@ public class ControllerDeposito {
         
         
         
-        Cliente cliente = new Cliente(cpf,null , valor, null);
+        Cliente cliente = new Cliente(cpf,null , valor, null,null);
         Deposito deposito = new Deposito(valor,cpf);  
 
         Conexao conexao = new Conexao();

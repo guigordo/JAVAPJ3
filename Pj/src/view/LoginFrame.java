@@ -4,9 +4,11 @@
  */
 package view;
 
+import controller.ControllerLogin;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import model.Clientes.Cliente;
 
 /**
  *
@@ -19,6 +21,7 @@ public class LoginFrame extends javax.swing.JFrame {
      */
     public LoginFrame() {
         initComponents();
+        controller = new ControllerLogin(this);
     }
 
     public JButton getButtonlogin() {
@@ -161,8 +164,19 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_TxtcpfActionPerformed
 
     private void buttonloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonloginActionPerformed
-        // TODO add your handling code here:
-        new ClienteOpcFrame().setVisible(true);
+        
+        controller.loginCliente();
+        Cliente clientelogado = controller.getclientelogado();
+        
+        if (clientelogado != null) {
+            
+            ClienteOpcFrame clienteOpcFrame = new ClienteOpcFrame(clientelogado);
+            clienteOpcFrame.setVisible(true);
+            this.setVisible(false); 
+        } else {
+            
+            System.out.println("Login não Efetuado.");
+        }
         
     }//GEN-LAST:event_buttonloginActionPerformed
 
@@ -200,7 +214,7 @@ public class LoginFrame extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+    private ControllerLogin controller;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Txtcpf;
     private javax.swing.JButton buttonlogin;

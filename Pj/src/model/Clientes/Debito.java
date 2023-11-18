@@ -1,12 +1,11 @@
 package model.Clientes;
 
 public class Debito {
-    private String cpf,tdc,senha,valor;
+    private String cpf,tdc,valor;
 
-    public Debito(String cpf, String tdc, String senha, String valor) {
+    public Debito(String cpf, String tdc, String valor) {
         this.cpf = cpf;
         this.tdc = tdc;
-        this.senha = senha;
         this.valor = valor;
     }
 
@@ -26,13 +25,7 @@ public class Debito {
         this.tdc = tdc;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+    
 
     public String getValor() {
         return valor;
@@ -44,8 +37,10 @@ public class Debito {
 
     @Override
     public String toString() {
-        return "Debito{" + "cpf=" + cpf + ", tdc=" + tdc + ", senha=" + senha + ", valor=" + valor + '}';
+        return "Debito{" + "cpf=" + cpf + ", tdc=" + tdc + ", valor=" + valor + '}';
     }
+
+    
     
     
     

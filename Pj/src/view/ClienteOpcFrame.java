@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.ControllerLogin;
 import model.Clientes.Cliente;
 
 /**
@@ -11,18 +12,17 @@ import model.Clientes.Cliente;
  * @author unifgalbuquerque
  */
 public class ClienteOpcFrame extends javax.swing.JFrame {
-
+    private Cliente cliente;
     /**
      * Creates new form ClienteOpcFrame
      */
-    public ClienteOpcFrame() {
-        initComponents();
-    }
-
     public ClienteOpcFrame(Cliente cliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        initComponents();
+        
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -166,7 +166,7 @@ public class ClienteOpcFrame extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttondebito;
     private javax.swing.JButton buttondeposito;

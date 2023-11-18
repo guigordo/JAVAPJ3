@@ -68,7 +68,7 @@ public class LobbyFrame extends javax.swing.JFrame {
 
     private void buttonprosseguirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonprosseguirActionPerformed
         // TODO add your handling code here:
-        new ClienteOpcFrame().setVisible(true);
+        new LoginFrame().setVisible(true);
     }//GEN-LAST:event_buttonprosseguirActionPerformed
 
     /**

@@ -89,7 +89,7 @@ public class OutraOpFrame extends javax.swing.JFrame {
 
     private void buttonsimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonsimActionPerformed
         // TODO add your handling code here:
-        new ClienteOpcFrame().setVisible(true);
+        new ClienteOpcFrame(null).setVisible(true);
     }//GEN-LAST:event_buttonsimActionPerformed
 
     /**

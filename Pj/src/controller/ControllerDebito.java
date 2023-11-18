@@ -15,55 +15,50 @@ public class ControllerDebito {
     public ControllerDebito(DebitoFrame view) {
         this.view = view;
     }
-    
-    public void opDebito(){
-        String cpf = view.getTxtcpf().getText();
-        String senha = view.getTxtsenha().getText();
-        String valor = view.getTxtvalor().getText();
-        String tdc = view.getTxtconta().getText();
-        
-        Cliente cliente = new Cliente(cpf, senha, valor, tdc);
-        Debito debito = new Debito(cpf, senha, valor, tdc);
-        Conexao conexao = new Conexao();
-        
-        try {
-            Connection conn = conexao.getConnection();
-            ClientesDAO dao = new ClientesDAO(conn);
+    public void opDebito() {
+    String cpf = view.getTxtcpf().getText();
+    String valor = view.getTxtvalor().getText();
+    String tipoConta = view.getTxtconta().getText();
 
-            
-            dao.atualizarSaldo(debito);
-            
-            ResultSet rss = dao.consultar(cliente);
-            
-            if (rss.next()) {
-                double valorDebito = Double.parseDouble(valor);
-                
-                if (tdc.equals("Salario")) {
-                    double taxa = 0.05;
-                    double valorComTaxa = valorDebito * (1 + taxa);
-                    
-                    double saldoAtual = Double.parseDouble(cliente.getSaldo());
-                    
-                    debito.setValor(Double.toString(valorComTaxa));
-                    cliente.setSaldo(Double.toString(saldoAtual - valorComTaxa));
-                    
-                } else if (tdc.equals("Corrente")) {
-                    double taxa = 0.01;
-                    double valorComTaxa = valorDebito * (1 + taxa);
-                    
-                    double saldoAtual = Double.parseDouble(cliente.getSaldo());
-                    
-                    debito.setValor(Double.toString(valorComTaxa));
-                    cliente.setSaldo(Double.toString(saldoAtual - valorComTaxa));
-                } else if (tdc.equals("Poupança")) {
-                    double saldoAtual = Double.parseDouble(cliente.getSaldo());
-                    
-                    debito.setValor(Double.toString(saldoAtual));
-                    cliente.setSaldo(Double.toString(saldoAtual - valorDebito));
-                }
+    Cliente cliente = new Cliente(cpf, null, valor, tipoConta, null);
+    Debito debito = new Debito(cpf,tipoConta,valor);
+    Conexao conexao = new Conexao();
+
+    try {
+        Connection conn = conexao.getConnection();
+        ClientesDAO dao = new ClientesDAO(conn);
+
+        ResultSet resultSet = dao.consultarClientePorCPF(cliente);
+
+        if (resultSet.next()) {
+            String nome = resultSet.getString("nome"); // Substitua "nome" pelo nome do campo na tabela
+            String saldo = resultSet.getString("saldo"); // Substitua "saldo" pelo nome do campo na tabela
+
+            double saldoAtual = Double.parseDouble(saldo);
+            double valorDebito = Double.parseDouble(valor);
+            double novoSaldo = 0;
+
+            if (tipoConta.equals("salario")) {
+                double taxa = 0.05;
+                novoSaldo = saldoAtual - (valorDebito * (1 + taxa));
+            } else if (tipoConta.equals("corrente")) {
+                double taxa = 0.01;
+                novoSaldo = saldoAtual - (valorDebito * (1 + taxa));
+            } else if (tipoConta.equals("poupança")) {
+                novoSaldo = saldoAtual - valorDebito;
             }
-        } catch(Exception e) {
-            JOptionPane.showMessageDialog(view, "Erro ao realizar o débito.", "Erro", JOptionPane.ERROR_MESSAGE);
+
+            cliente = new Cliente(cpf, nome, valor, tipoConta, Double.toString(novoSaldo));
+            dao.atualizarSaldo(debito);
+            JOptionPane.showMessageDialog(view, "Débito realizado com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(view, "Conta não encontrada.", "Erro", JOptionPane.ERROR_MESSAGE);
         }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(view, "Erro ao realizar o débito: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
     }
+}
+
+
+    
 }

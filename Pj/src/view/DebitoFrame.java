@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.ControllerDebito;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
@@ -19,6 +20,7 @@ public class DebitoFrame extends javax.swing.JFrame {
      */
     public DebitoFrame() {
         initComponents();
+        controller = new ControllerDebito(this);
     }
 
     public JLabel getDébito() {
@@ -53,14 +55,6 @@ public class DebitoFrame extends javax.swing.JFrame {
         this.lbcpf = lbcpf;
     }
 
-    public JLabel getLbsenha() {
-        return lbsenha;
-    }
-
-    public void setLbsenha(JLabel lbsenha) {
-        this.lbsenha = lbsenha;
-    }
-
     public JLabel getLbvalor() {
         return lbvalor;
     }
@@ -85,14 +79,6 @@ public class DebitoFrame extends javax.swing.JFrame {
         this.txtcpf = txtcpf;
     }
 
-    public JTextField getTxtsenha() {
-        return txtsenha;
-    }
-
-    public void setTxtsenha(JTextField txtsenha) {
-        this.txtsenha = txtsenha;
-    }
-
     public JTextField getTxtvalor() {
         return txtvalor;
     }
@@ -115,11 +101,9 @@ public class DebitoFrame extends javax.swing.JFrame {
         Débito = new javax.swing.JLabel();
         txtcpf = new javax.swing.JTextField();
         txtconta = new javax.swing.JTextField();
-        txtsenha = new javax.swing.JTextField();
         txtvalor = new javax.swing.JTextField();
         lbcpf = new javax.swing.JLabel();
         lbvalor = new javax.swing.JLabel();
-        lbsenha = new javax.swing.JLabel();
         lbconta = new javax.swing.JLabel();
         buttonconcluido = new javax.swing.JToggleButton();
 
@@ -133,9 +117,6 @@ public class DebitoFrame extends javax.swing.JFrame {
 
         lbvalor.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lbvalor.setText("Valor:");
-
-        lbsenha.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        lbsenha.setText("Senha:");
 
         lbconta.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lbconta.setText("Conta:");
@@ -164,20 +145,17 @@ public class DebitoFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(lbsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lbconta, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lbvalor, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtconta, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtvalor, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txtconta, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtvalor, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(94, 94, 94)
                         .addComponent(buttonconcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -192,15 +170,11 @@ public class DebitoFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbcpf, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtconta, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbconta, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
-                .addGap(11, 11, 11)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtsenha, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbsenha, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtvalor, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbvalor, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE))
@@ -214,6 +188,7 @@ public class DebitoFrame extends javax.swing.JFrame {
 
     private void buttonconcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonconcluidoActionPerformed
         // TODO add your handling code here:
+        controller.opDebito();
         new OutraOpFrame().setVisible(true);
     }//GEN-LAST:event_buttonconcluidoActionPerformed
 
@@ -251,17 +226,15 @@ public class DebitoFrame extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+    private ControllerDebito controller;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Débito;
     private javax.swing.JToggleButton buttonconcluido;
     private javax.swing.JLabel lbconta;
     private javax.swing.JLabel lbcpf;
-    private javax.swing.JLabel lbsenha;
     private javax.swing.JLabel lbvalor;
     private javax.swing.JTextField txtconta;
     private javax.swing.JTextField txtcpf;
-    private javax.swing.JTextField txtsenha;
     private javax.swing.JTextField txtvalor;
     // End of variables declaration//GEN-END:variables
 }
