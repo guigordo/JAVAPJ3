@@ -4,6 +4,14 @@
  */
 package view;
 
+import DAO.Conexao;
+import DAO.GerenteDAO;
+import java.awt.GridLayout;
+import java.sql.Connection;
+import java.util.List;
+import javax.swing.JLabel;
+import java.sql.SQLException;
+
 /**
  *
  * @author unifgalbuquerque
@@ -16,6 +24,38 @@ public class SaldoContasFrame extends javax.swing.JFrame {
     public SaldoContasFrame() {
         initComponents();
     }
+    public void exibirContasBanco() {
+    panelinfo.removeAll(); // Remove qualquer componente anteriormente exibido
+
+    try {
+        Conexao conexao = new Conexao();
+        Connection conn = conexao.getConnection();
+        GerenteDAO dao = new GerenteDAO(conn);
+
+        List<String[]> saldos = dao.obterSaldosContas();
+        
+
+        panelinfo.setLayout(new GridLayout(saldos.size(), 1));
+
+        for (String[] dadosConta : saldos) {
+            String cpf = dadosConta[0];
+            String saldo = dadosConta[1];
+            
+            JLabel labelSaldo = new JLabel("Cpf: " + cpf + "  " + "Saldo: " + saldo);
+            panelinfo.add(labelSaldo); 
+        }
+
+        conn.close();
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+        
+    }
+
+    panelinfo.revalidate(); 
+    panelinfo.repaint();
+}
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,68 +67,13 @@ public class SaldoContasFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         lbsaldodascontas = new javax.swing.JLabel();
-        lbcpf = new javax.swing.JLabel();
-        lbsaldo = new javax.swing.JLabel();
-        lbcpf1 = new javax.swing.JLabel();
-        lbsaldo1 = new javax.swing.JLabel();
-        lbcpf2 = new javax.swing.JLabel();
-        lbsaldo2 = new javax.swing.JLabel();
-        lbcpf3 = new javax.swing.JLabel();
-        lbsaldo3 = new javax.swing.JLabel();
-        txtcpf = new javax.swing.JTextField();
-        txtsaldo = new javax.swing.JTextField();
-        txtcpf1 = new javax.swing.JTextField();
-        txtsaldo1 = new javax.swing.JTextField();
-        txtcpf2 = new javax.swing.JTextField();
-        txtsaldo2 = new javax.swing.JTextField();
-        txtcpf3 = new javax.swing.JTextField();
-        txtsaldo3 = new javax.swing.JTextField();
         buttonconcluido = new javax.swing.JButton();
+        panelinfo = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lbsaldodascontas.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lbsaldodascontas.setText("Saldo das Contas");
-
-        lbcpf.setText("CPF:");
-
-        lbsaldo.setText("Saldo:");
-
-        lbcpf1.setText("CPF:");
-
-        lbsaldo1.setText("Saldo:");
-
-        lbcpf2.setText("CPF:");
-
-        lbsaldo2.setText("Saldo:");
-
-        lbcpf3.setText("CPF:");
-
-        lbsaldo3.setText("Saldo:");
-
-        txtcpf2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcpf2ActionPerformed(evt);
-            }
-        });
-
-        txtsaldo2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtsaldo2ActionPerformed(evt);
-            }
-        });
-
-        txtcpf3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcpf3ActionPerformed(evt);
-            }
-        });
-
-        txtsaldo3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtsaldo3ActionPerformed(evt);
-            }
-        });
 
         buttonconcluido.setText("Concluído");
         buttonconcluido.addActionListener(new java.awt.event.ActionListener() {
@@ -97,6 +82,19 @@ public class SaldoContasFrame extends javax.swing.JFrame {
             }
         });
 
+        panelinfo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout panelinfoLayout = new javax.swing.GroupLayout(panelinfo);
+        panelinfo.setLayout(panelinfoLayout);
+        panelinfoLayout.setHorizontalGroup(
+            panelinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panelinfoLayout.setVerticalGroup(
+            panelinfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 327, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,41 +102,9 @@ public class SaldoContasFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbcpf3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtcpf3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbsaldo2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtsaldo2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbcpf2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtcpf2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbsaldo1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtsaldo1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbcpf1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtcpf1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtsaldo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtcpf))
+                    .addComponent(panelinfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbsaldodascontas)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbsaldo3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtsaldo3)
-                            .addComponent(buttonconcluido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(buttonconcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -146,61 +112,15 @@ public class SaldoContasFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(lbsaldodascontas)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbcpf, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtcpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbcpf1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtcpf1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbsaldo1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtsaldo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbcpf2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtcpf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbsaldo2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtsaldo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbcpf3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtcpf3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbsaldo3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtsaldo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panelinfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(buttonconcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtcpf2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcpf2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcpf2ActionPerformed
-
-    private void txtsaldo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsaldo2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtsaldo2ActionPerformed
-
-    private void txtcpf3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcpf3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcpf3ActionPerformed
-
-    private void txtsaldo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsaldo3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtsaldo3ActionPerformed
 
     private void buttonconcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonconcluidoActionPerformed
         // TODO add your handling code here:
@@ -244,22 +164,7 @@ public class SaldoContasFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonconcluido;
-    private javax.swing.JLabel lbcpf;
-    private javax.swing.JLabel lbcpf1;
-    private javax.swing.JLabel lbcpf2;
-    private javax.swing.JLabel lbcpf3;
-    private javax.swing.JLabel lbsaldo;
-    private javax.swing.JLabel lbsaldo1;
-    private javax.swing.JLabel lbsaldo2;
-    private javax.swing.JLabel lbsaldo3;
     private javax.swing.JLabel lbsaldodascontas;
-    private javax.swing.JTextField txtcpf;
-    private javax.swing.JTextField txtcpf1;
-    private javax.swing.JTextField txtcpf2;
-    private javax.swing.JTextField txtcpf3;
-    private javax.swing.JTextField txtsaldo;
-    private javax.swing.JTextField txtsaldo1;
-    private javax.swing.JTextField txtsaldo2;
-    private javax.swing.JTextField txtsaldo3;
+    private javax.swing.JPanel panelinfo;
     // End of variables declaration//GEN-END:variables
 }

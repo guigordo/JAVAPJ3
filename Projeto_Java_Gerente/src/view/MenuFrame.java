@@ -21,6 +21,12 @@ public class MenuFrame extends javax.swing.JFrame {
         contasFrame.exibirContasBanco();
         contasFrame.setVisible(true);
     }
+    
+    private static void exibirSaldoContasBancoFrame() {
+        SaldoContasFrame saldocontas = new SaldoContasFrame();
+        saldocontas.exibirContasBanco();
+        saldocontas.setVisible(true);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -132,6 +138,7 @@ public class MenuFrame extends javax.swing.JFrame {
     private void btexibirsaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btexibirsaldoActionPerformed
         // TODO add your handling code here:
         new SaldoContasFrame().setVisible(true);
+        exibirSaldoContasBancoFrame();  
     }//GEN-LAST:event_btexibirsaldoActionPerformed
 
     private void btcadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcadastrarActionPerformed

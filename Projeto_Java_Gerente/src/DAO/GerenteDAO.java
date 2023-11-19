@@ -39,14 +39,14 @@ public class GerenteDAO {
     }
     
     public void contaSalario(TipoDeConta tipodc) throws SQLException{
-        String sql = "UPDATE cliente set tdc = 'salario' where cpf = ?";
+        String sql = "update cliente set tdc = 'salario' where cpf = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, tipodc.getCpf());
         statement.execute();
         conn.close();
     }
     public void contaPoupanca(TipoDeConta tipodc) throws SQLException{
-        String sql = "UPDATE cliente set tdc = 'poupança' where cpf = ?";
+        String sql = "update cliente set tdc = 'poupança' where cpf = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, tipodc.getCpf());
         statement.execute();
@@ -54,7 +54,7 @@ public class GerenteDAO {
     
     }
     public void contaCorrente(TipoDeConta tipodc) throws SQLException{
-        String sql = "UPDATE cliente set tdc = 'corrente' where cpf = ?";
+        String sql = "update cliente set tdc = 'corrente' where cpf = ?";
         PreparedStatement statement = conn.prepareStatement(sql);
         statement.setString(1, tipodc.getCpf());
         statement.execute();
@@ -65,15 +65,15 @@ public class GerenteDAO {
         String sql = "select * from cliente";
 
         PreparedStatement statement = conn.prepareStatement(sql);
-        ResultSet result = statement.executeQuery();
+        ResultSet res = statement.executeQuery();
 
-        while (result.next()) {
+        while (res.next()) {
             
-            String nome = result.getString("nome");
-            String cpf = result.getString("cpf");
-            String saldo = result.getString("saldo");
-            String tdc = result.getString("tdc");
-            String senha = result.getString("senha");
+            String nome = res.getString("nome");
+            String cpf = res.getString("cpf");
+            String saldo = res.getString("saldo");
+            String tdc = res.getString("tdc");
+            String senha = res.getString("senha");
 
             Gerente gerente = new Gerente(cpf, nome, senha, saldo, tdc);
             contas.add(gerente);
@@ -81,6 +81,24 @@ public class GerenteDAO {
 
         conn.close();
         return contas;
+    }
+    public List<String[]> obterSaldosContas() throws SQLException {
+        List<String[]> saldos = new ArrayList<>();
+        String sql = "select cpf,saldo from cliente"; 
+
+        PreparedStatement statement = conn.prepareStatement(sql);
+        ResultSet res = statement.executeQuery();
+
+        while (res.next()) {
+           
+            String saldo = res.getString("saldo");
+            String cpf = res.getString("cpf");
+            String[] dadosConta = {cpf,saldo};
+            saldos.add(dadosConta);
+        }
+
+        conn.close();
+        return saldos;
     }
 }
     
