@@ -29,16 +29,19 @@ public class ClientesDAO{
     
     public void atualizarSaldo(Debito debito) throws SQLException {
         String sql = "update cliente set saldo = ? where cpf = ?";
-        try (PreparedStatement statement = conn.prepareStatement(sql)) {
-            statement.setString(1, debito.getValor());
-            statement.setString(2, debito.getCpf());
-            statement.execute();
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, debito.getValor());
+        statement.setString(2, debito.getCpf());
+        statement.execute();
             
-        }catch(SQLException e) {
-        e.printStackTrace();
-        JOptionPane.showMessageDialog(null, "Erro ao atualizar saldo: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
-        }
-    } 
+    }
+
+    public void descontarSaldo(Cliente cliente) throws SQLException{
+        String sql = "update cliente set saldo = ? where cpf = ?";
+        PreparedStatement statement = conn.prepareStatement(sql);
+        statement.setString(1, cliente.getSaldo());
+        statement.setString(2, cliente.getCpf());
+    }
     
     public ResultSet consultarClientePorCPF(Cliente cliente) throws SQLException {
         String sql = "select * from cliente where cpf = ?";
@@ -58,13 +61,19 @@ public class ClientesDAO{
         }
     }
     public ResultSet consultarSaldo(Cliente cliente) {
-        String sql = "select saldo from cliente where cpf = ?";
+        String sql = "SELECT saldo FROM cliente WHERE cpf = ?";
 
-        try (PreparedStatement statement = conn.prepareStatement(sql)) {
+         try (PreparedStatement statement = conn.prepareStatement(sql)) {
             statement.setString(1, cliente.getCpf());
+            ResultSet resultSet = statement.executeQuery();
 
-            return statement.executeQuery();
-        } catch (Exception e) {
+            if (resultSet.next()) {
+                String saldo = resultSet.getString("saldo");
+                cliente.setSaldo(saldo);
+        }
+
+            return resultSet;
+         }catch (SQLException e) {
             e.printStackTrace();
             return null;
         }

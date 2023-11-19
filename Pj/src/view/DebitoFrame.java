@@ -188,7 +188,7 @@ public class DebitoFrame extends javax.swing.JFrame {
 
     private void buttonconcluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonconcluidoActionPerformed
         // TODO add your handling code here:
-        controller.opDebito();
+//        controller.opDebito();
         new OutraOpFrame().setVisible(true);
     }//GEN-LAST:event_buttonconcluidoActionPerformed
 

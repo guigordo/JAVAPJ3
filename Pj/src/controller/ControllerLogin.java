@@ -14,7 +14,7 @@ import view.ClienteOpcFrame;
 public class ControllerLogin {
     
     private LoginFrame view;
-    private static Cliente clientelogado;
+    public static Cliente clientelogado;
     
     public ControllerLogin(LoginFrame view){
         this.view = view;

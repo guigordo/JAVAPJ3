@@ -4,9 +4,15 @@
  */
 package view;
 
+import DAO.Conexao;
 import DAO.GerenteDAO;
+import java.awt.GridLayout;
+import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import model.Gerente;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  *
@@ -21,7 +27,33 @@ public class ContasBancoFrame extends javax.swing.JFrame {
         initComponents();
         
     }
+    public void exibirContasBanco() {
+        panelinfo.removeAll();
 
+        try {
+            Conexao conexao = new Conexao();
+            Connection conn = conexao.getConnection();
+            GerenteDAO dao = new GerenteDAO(conn);
+
+            List<Gerente> contas = dao.obterTodasContas();
+
+            panelinfo.setLayout(new GridLayout(contas.size(), 1));
+
+            for (Gerente conta : contas) {
+                JLabel labelConta = new JLabel(conta.toString()); 
+                panelinfo.add(labelConta); 
+            }
+
+            conn.close();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            
+        }
+
+        panelinfo.revalidate();
+        panelinfo.repaint();
+    }
+    
     public JLabel getLbcdb() {
         return lbcdb;
     }

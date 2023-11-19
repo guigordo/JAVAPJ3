@@ -16,6 +16,11 @@ public class MenuFrame extends javax.swing.JFrame {
     public MenuFrame() {
         initComponents();
     }
+    private static void exibirContasBancoFrame() {
+        ContasBancoFrame contasFrame = new ContasBancoFrame();
+        contasFrame.exibirContasBanco();
+        contasFrame.setVisible(true);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -121,6 +126,7 @@ public class MenuFrame extends javax.swing.JFrame {
     private void btexibircontasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btexibircontasActionPerformed
         // TODO add your handling code here:
         new ContasBancoFrame().setVisible(true);
+        exibirContasBancoFrame();
     }//GEN-LAST:event_btexibircontasActionPerformed
 
     private void btexibirsaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btexibirsaldoActionPerformed

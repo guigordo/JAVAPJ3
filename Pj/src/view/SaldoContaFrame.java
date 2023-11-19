@@ -4,6 +4,9 @@
  */
 package view;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
 /**
  *
  * @author unifgalbuquerque
@@ -16,6 +19,36 @@ public class SaldoContaFrame extends javax.swing.JFrame {
     public SaldoContaFrame() {
         initComponents();
     }
+    
+    public void mostrarSaldo(String saldo){
+        lblsaldo.setText("Saldo: " + saldo);
+    }
+
+    public JButton getButtonconcluido() {
+        return buttonconcluido;
+    }
+
+    public void setButtonconcluido(JButton buttonconcluido) {
+        this.buttonconcluido = buttonconcluido;
+    }
+
+    public JLabel getLblsaldo() {
+        return lblsaldo;
+    }
+
+    public void setLblsaldo(JLabel lblsaldo) {
+        this.lblsaldo = lblsaldo;
+    }
+
+    public JLabel getLbsaldo() {
+        return lbsaldo;
+    }
+
+    public void setLbsaldo(JLabel lbsaldo) {
+        this.lbsaldo = lbsaldo;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,8 +60,8 @@ public class SaldoContaFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         lbsaldo = new javax.swing.JLabel();
-        txtsaldo = new javax.swing.JTextField();
         buttonconcluido = new javax.swing.JButton();
+        lblsaldo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,6 +75,8 @@ public class SaldoContaFrame extends javax.swing.JFrame {
             }
         });
 
+        lblsaldo.setText("Saldo da Conta:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -49,21 +84,22 @@ public class SaldoContaFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(99, 99, 99)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(buttonconcluido, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                    .addComponent(lbsaldo, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                    .addComponent(txtsaldo))
-                .addContainerGap(108, Short.MAX_VALUE))
+                    .addComponent(lblsaldo, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lbsaldo, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                        .addComponent(buttonconcluido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbsaldo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(lblsaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
                 .addComponent(buttonconcluido, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -111,7 +147,7 @@ public class SaldoContaFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonconcluido;
+    private javax.swing.JLabel lblsaldo;
     private javax.swing.JLabel lbsaldo;
-    private javax.swing.JTextField txtsaldo;
     // End of variables declaration//GEN-END:variables
 }
